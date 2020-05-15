@@ -1,0 +1,17 @@
+﻿@model List<Student>
+
+<h2>Студенты</h2>
+<div class="list-border">
+    <div class="list-of-student">
+        @foreach (var student in Model)
+        {
+            <div class="student">
+                <div>
+                    <label>@student.Name</label>
+                    <span>@student.Group</span>
+                </div>
+                <input type="checkbox" name="student" value="@student.Id"/>
+            </div>
+        }
+    </div>
+</div>

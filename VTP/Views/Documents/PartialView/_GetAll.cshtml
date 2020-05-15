@@ -1,0 +1,44 @@
+﻿@model List<Document>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Название</th>
+            <th scope="col">Дата создания</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int i = 0; }
+        @foreach (var doc in Model)
+        {
+            <tr id="@doc.Id">
+                @{ i++; }
+                <th scope="row">@i</th>
+                <td>
+                    @switch (doc.DocumentType)
+                    {
+                        case "doc":
+                        case "docx":
+                            <img src="~/images/word.png" style="height: 30px; width: 30px;" />
+                            break;
+                        case "pdf":
+                            <img src="~/images/pdf.png" style="height: 30px; width: 30px;" />
+                            break;
+                        case "xls":
+                        case "xlsx":
+                            <img src="~/images/xls.png" style="height: 30px; width: 30px;" />
+                            break;
+                    }
+                    @doc.Name
+                </td>
+                <td>@doc.CreationTime</td>
+                <td>
+                    <a href="@Url.Action("GetFile", new { id = doc.Id })" class="btn btn-default">Скачать</a>
+                    <button type="button" class="btn btn-danger" onclick="DeleteDocument(@doc.Id, '@doc.Name')">Удалить</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

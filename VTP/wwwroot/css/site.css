@@ -1,0 +1,142 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
+for details on configuring this project to bundle and minify static web assets. */
+@import url('site.css');
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.site-body {
+}
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.icon{
+    width: 40px;
+    height: 40px;
+    margin-top: 6px;
+}
+
+.loading {
+    margin: auto;
+}
+
+.input-student {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.input-field {
+    margin-top: 15px;
+    padding: 10px;
+    border: solid 2px;
+    border-color: #bbbbbb;
+    border-radius: 10px;
+}
+
+.student-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.tr-finger {
+    cursor: pointer;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.mybtn {
+    margin-right: 5px;
+}
+
+.list-border {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    height: 513px;
+    width: 330px;
+}
+
+.list-of-student {
+    overflow-y: auto;
+    height: 500px;
+    width: inherit;
+}
+
+    .list-of-student::-webkit-scrollbar {
+        width: 11px;
+    }
+
+.student {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 300px;
+    height: 60px;
+    background-color: #f1f1f1;
+}
+
+    .student input {
+        float: right;
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+
+    .student div {
+        display: flex;
+        flex-direction: column;
+        float: left;
+    }
+
+#student-list{
+    float: right;
+    margin-top: 20px;
+}
+
+.table-property{
+    float: left;
+}
+
+.template-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-content: center;
+}
+
+.file {
+    margin-left: 20px;
+    padding-top: 6px;
+    margin-right: 20px;
+}

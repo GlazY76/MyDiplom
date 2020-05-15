@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Документы";
+}
+<h2>Документы</h2>
+<input type="file" id="real-file" onchange="SaveDocument()" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="display: none;"/>
+<button id="custom-btn" class="btn btn-success" type="button">Загрузить документ</button>
+
+<div id="doc-table">   
+</div>
+
+<script src="~/js/Documents.js" asp-append-version="true"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        GetAll();
+    });
+</script>

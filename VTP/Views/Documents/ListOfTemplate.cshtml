@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Шаблоны";
+}
+
+<h2>Шаблоны</h2>
+<a class="btn btn-success" href="@Url.Action("CreateTemplate")">Создать шаблон</a>
+
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Название</th>
+                <th scope="col">Дата создания</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ int i = 0; }
+            <tr class="tr-finger">
+                @{ i++; }
+                <th onclick="document.location = '@Url.Action("", "")'" scope="row">@i</th>
+                <td onclick="document.location = '@Url.Action("", "")'">Mark</td>
+                <td onclick="document.location = '@Url.Action("", "")'">Otto</td>
+                <td style="float: right;">
+                    <button type="button" class="btn btn-success mybtn">Заполнить</button>
+                    <button type="button" class="btn btn-default mybtn">Изменить</button>
+                    <button type="button" class="btn btn-danger mybtn">Удалить</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="~/js/Template.js" asp-append-version="true"></script>

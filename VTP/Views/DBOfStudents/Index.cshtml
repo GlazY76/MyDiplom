@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Студенты";
+}
+
+<h2>Студенты</h2>
+<a class="btn btn-success" asp-area="" asp-controller="DBOfStudents" asp-action="AddStudents">Добавить студентов</a>
+<div id="students">
+</div>
+<script src="~/js/DBOfStudents.js" asp-append-version="true"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        GetAll();
+    });
+</script>

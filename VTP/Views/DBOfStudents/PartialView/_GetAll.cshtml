@@ -1,0 +1,34 @@
+﻿
+@model List<VTP.Models.Student>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Имя</th>
+            <th scope="col">Группа</th>
+            <th scope="col">Форма обучения</th>
+            <th scope="col">Дата поступления</th>
+            <th scope="col">Дата выпуска</th>
+            <th scope="col">Статус стипендии</th>
+            <th scope="col">Дата рождение</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr id="@student.Id" class="tr-finger" >
+                <td onclick="document.location = '@Url.Action("ShowStudent", "DBOfStudents", new { id = student.Id })'">@student.Name</td>
+                <td onclick="document.location = '@Url.Action("ShowStudent", "DBOfStudents", new { id = student.Id })'">@student.Group</td>
+                <td onclick="document.location = '@Url.Action("ShowStudent", "DBOfStudents", new { id = student.Id })'">@student.FormOfStudy</td>
+                <td onclick="document.location = '@Url.Action("ShowStudent", "DBOfStudents", new { id = student.Id })'">@student.EntryDate</td>
+                <td onclick="document.location = '@Url.Action("ShowStudent", "DBOfStudents", new { id = student.Id })'">@student.GraduationDate</td>
+                <td onclick="document.location = '@Url.Action("ShowStudent", "DBOfStudents", new { id = student.Id })'">@student.ScholarshipStatus</td>
+                <td onclick="document.location = '@Url.Action("ShowStudent", "DBOfStudents", new { id = student.Id })'">@student.BornDate.ToString("dd-mm-yyyy")</td>
+                <td>
+                    @Html.ActionLink("Изменить", "EditStudent", "DBOfStudents", new { id = student.Id }, new { @class = "btn btn btn-default" })
+                    <button type="button" class="btn btn-danger" onclick="DeleteStudent(@student.Id, '@student.Name')">Удалить</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

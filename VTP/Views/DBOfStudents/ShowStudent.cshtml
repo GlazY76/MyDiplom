@@ -1,0 +1,21 @@
+﻿@model VTP.Models.Student
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<h2>@Model.Name</h2>
+<div class="student-info">
+    <label>Группа: @Model.Group</label>
+    <label>Форма обучения:  @Model.FormOfStudy</label>
+    <label>Дата поступления:  @Model.EntryDate.ToString("dd-mm-yyyy")</label>
+    <label>Дата выпуска: @Model.GraduationDate.ToString("dd-mm-yyyy")</label>
+    <label>Статус стипендии: @Model.ScholarshipStatus</label>
+    <label>Дата рождение: @Model.BornDate.ToString("dd-mm-yyyy")</label>
+    <label>Телефонный номер: @Model.TelNumber</label>
+    <label>Семейный статус: @Model.FamilyStatus</label>
+    <label>Призывной статус: @Model.MilitaryStatus</label>
+    <label>Отец: @Model.FatherName</label>
+    <label>Мать: @Model.MotherName</label>
+    <label>Школа: @Model.School</label>
+</div>
+

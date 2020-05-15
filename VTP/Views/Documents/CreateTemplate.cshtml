@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewData["Title"] = "Создание шаблона";
+}
+
+<form onsubmit="template_on_submit(); return false;">
+<div class="template-buttons">
+    <button type="submit" class="btn btn-success">Заполнить</button>
+    <input id="template" type="file" class="file" accept="application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+    <input type="checkbox" name="save" value="true"/>
+    <label>Сохранить файл на сайте</label>
+</div>
+<div style="display: flow-root;">
+    <div class="table-property">
+        <h2>Используемые столбцы</h2>
+
+        <div class="input-student">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="Name" value="colum" />
+            <label>Ф.И.О студента</label>
+            <div id="Name" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+        <div class="input-student">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="Group" value="colum" />
+            <label>Группа</label>
+            <div id="Group" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+
+        <div class="input-student ">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="FormOfStudy" value="colum" />
+            <label>Форма обучения</label>
+            <div id="FormOfStudy" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+
+        <div class="input-student ">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="ScholarshipStatus" value="colum" />
+            <label>Статус стипендии</label>
+            <div id="ScholarshipStatus" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+
+        <div class="input-student ">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" value="colum" name="FamilyStatus" />
+            <label>Семейный статус</label>
+            <div id="FamilyStatus" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+
+        <div class="input-student ">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="MilitaryStatus" value="colum" />
+            <label>Призывной статус</label>
+            <div id="MilitaryStatus" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+
+        <div class="input-student ">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="School" value="colum" />
+            <label>Школа</label>
+            <div id="School" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+
+        <div class="input-student ">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="FatherName" value="colum" />
+            <label>Ф.И.О отца</label>
+            <div id="FatherName" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+
+        <div class="input-student ">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="MotherName" value="colum" />
+            <label>Ф.И.О матери</label>
+            <div id="MotherName" style="display: none;">
+                <label>Позиция</label>
+                <input  type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+
+        <div class="input-student ">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="TelNumber" value="colum" />
+            <label>Телефонный номер</label>
+            <div id="TelNumber" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+
+        <div class="input-student ">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="BornDate" value="colum">
+            <label>Дата рождения</label>
+            <div id="BornDate" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+
+        <div class="input-student ">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="EntryDate" value="colum">
+            <label>Дата поступления</label>
+            <div id="EntryDate" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+        <hr>
+        <div class="input-student ">
+            <input type="checkbox" onclick="Checkbox_OnClick(event)" name="GraduationDate" value="colum" />
+            <label>Дата выпуска</label>
+            <div id="GraduationDate" style="display: none;">
+                <label>Позиция</label>
+                <input type="number" class="form-control" style="width: 50px;" />
+            </div>
+        </div>
+    </div>
+
+    <div id="student-list"></div>
+</div>
+</form>
+<script src="~/js/Template.js" asp-append-version="true"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        GetStudents();
+    });
+</script>
